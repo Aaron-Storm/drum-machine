@@ -1,0 +1,10 @@
+#display {
+    padding: 1em 2.5em;
+    color: #fff;
+    background-color: orange;
+    cursor: pointer;
+    border-radius: 5px;
+    border:none;
+    width: 40%;
+    text-align: center;
+}

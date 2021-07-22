@@ -1,0 +1,13 @@
+.drum-pads {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    width: 90%;
+    height: 60%;
+    background-color:transparent;
+    
+}
+
+.flash {
+    background-color: orange;
+}

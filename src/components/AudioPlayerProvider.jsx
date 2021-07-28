@@ -1,10 +1,10 @@
 import React from 'react'
 
-const AudioPlayer = new Audio();
 
-const AudioContext = React.createContext(AudioPlayer);
 
-// export const useAudio = React.useContext(AudioContext);
+const ThemeContext = React.createContext('light');
 
-export const AudioProvider = ({children,}) => (
-    <AudioContext.Provider value={AudioPlayer}>{children}</AudioContext.Provider>)
+// export const useAudio = React.useContext(ThemeContext);
+
+export const ThemeProvider = ({children,}) => (
+    <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>)

@@ -1,4 +1,5 @@
 @import-normalize;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Waiting+for+the+Sunrise&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -7,6 +8,42 @@
 }
 
 body {
+
+/*Dark Theme Colors */
+  
+  --bgMainDark: hsl(240, 25%, 10%);
+  --bgDrumMachineDark: hsl(240, 18%, 14%);
+  --shadowBtnDark: 0px 0px 5px 1.5px rgb(83, 93, 116);
+  --fontColorDark: white;
+  --bgInactiveBtnDark: hsl(225, 36%, 7%);
+
+/* Light Theme Colors */
+
+  --bgMainLight: hsl(240, 15%, 95%);
+  --bgDrumMachineLight: hsl(240, 18%, 75%);
+  --bgInactiveBtnLight: hsl(232, 10%, 50%);
+
+/* Button effects */
+  --bgActiveBtn: hsl(43, 100%, 58% );
+  
+
+  --shadowHoverBtn: 0px 0px 7px -2px rgb(255, 255, 255) inset;
+
+  --focusBtn: 0.05rem solid white;
+
+  --displayActive: hsl(68, 90%, 59%);
+
+
+  /* --headerGridDesktop:  */
+  /* --headerGridMobile:  */
+
+
+
+/* Light Theme Colors */
+  --bgMainLight: hsl(240, 18%, 79%);
+  --bgDrumMachineLight:hsl(240, 18%, 14%);
+  --bgDrumPadsLight: hsl(225, 36%, 7%);
+  --shadowDrumPadsLight: 0px 0px 5px 2px rgb(0, 0, 0);
  
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

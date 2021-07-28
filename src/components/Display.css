@@ -1,10 +1,21 @@
 #display {
-    padding: 1em 2.5em;
-    color: #fff;
-    background-color: orange;
-    cursor: pointer;
-    border-radius: 5px;
-    border:none;
-    width: 40%;
-    text-align: center;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  font-family: open sans;
+  font-weight: 500;
+  font-size: 1.5rem;
+  background-color: var(--displayActive);
+  padding: 0.4em 0.8em;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  margin: 0;
+  box-shadow: 0 0 0.6rem 0.2rem rgba(0, 0, 0, 0.5) inset;
+}
+
+@media (max-height: 650px) {
+  #display {
+    font-size: 1rem;
+  }
 }

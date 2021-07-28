@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Display from "./Display";
 import DrumPads from "./DrumPads";
-import "./DrumMachine.css";
+import Header from "./Header";
+import Controls from "./Controls";
+// import "./DrumMachine.css";
+import styles from "./DrumMachine.module.css";
 
-function DrumMachine() {
+function DrumMachine({ theme, toggleDarkScreen }) {
   const [power, setPower] = useState(false);
   const [name, setName] = useState("WELCOME");
   const [active, setActive] = useState(false);
+  const [bank, setBank] = useState("bankA");
+  const [volume, setVolume] = useState(50);
 
   useEffect(() => {
     function removeClass(e) {
@@ -19,10 +24,10 @@ function DrumMachine() {
     const clips = Array.from(document.querySelectorAll(".clip"));
 
     clips.forEach((clip) => {
-      console.log(clip);
+      // console.log(clip);
       clip.addEventListener("playing", removeClass);
     });
-    console.log(clips);
+    // console.log(clips);
     return () => {
       window.removeEventListener("playing", removeClass);
     };
@@ -43,6 +48,18 @@ function DrumMachine() {
   }
 
   useEffect(() => {
+    const ctrlBtnHandler = (e) => {
+      try {
+        console.log(e.currentTarget.classList.contains("bankA"));
+        if (e.currentTarget.classList.contains("bankA")) {
+          setBank("bankA");
+        } else if (e.currentTarget.classList.contains("bankB")) {
+          setBank("bankB");
+        }
+      } catch (error) {}
+    };
+    console.log(bank);
+
     const keyIsPressed = (e) => {
       try {
         let keyCode = e.key.toUpperCase();
@@ -63,23 +80,43 @@ function DrumMachine() {
       }
     };
 
+    const btns = document.querySelectorAll(".ctrlBtn");
+    btns.forEach((btn) => {
+      btn.addEventListener("click", ctrlBtnHandler);
+    });
+
     window.addEventListener("keydown", keyIsPressed);
+
     return () => {
       window.removeEventListener("keydown", keyIsPressed);
     };
-  }, [name]);
+  }, [name, bank]);
+
+  function handleVolume(e) {
+    // const audio = windo
+  }
+
+
+  let className = styles.drumMachine;
+  if (theme) {
+    className += ` ${styles.dark}`;
+  } else {
+    className += ` ${styles.light}`;
+  }
 
   return (
-    // <AudioProvider>
-    <div className="drum-machine" id="drum-machine">
-      <div className="controls">
-        <div className="title">DRUM MACHINE</div>
-        <Display sound={name} />
-      </div>
-
-      <DrumPads onClick={playAudio} active={active} clipName={name} />
+    <div className={className} id="drum-machine">
+      <Header handleClick={toggleDarkScreen} />
+      <Display sound={name} volume={volume} />
+      <Controls activeBank={bank} handleVolume={handleVolume} theme={theme} />
+      <DrumPads
+        onClick={playAudio}
+        active={active}
+        clipName={name}
+        activeBank={bank}
+        theme={theme}
+      />
     </div>
-    // </AudioProvider>
   );
 }
 

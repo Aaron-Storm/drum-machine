@@ -1,25 +1,78 @@
+.darkBtn {
+  background-color: var(--bgInactiveBtnDark);
+}
+.lightBtn {
+  background-color: var(--bgInactiveBtnLight);
+}
+
 .drum-pad {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(68, 29, 29);
+  /* background-color: var(--bgInactiveBtnDark); */
   border-radius: 0.7em;
   cursor: pointer;
   border: none;
+  box-shadow: var(--shadowBtnDark);
+  min-height: 2rem;
 }
 
 .drum-pad:hover {
-  box-shadow: 0px 0px 10px 2px rgba(122, 0, 0, 0.3);
+  box-shadow: var(--shadowHoverBtn);
+  /* animation: borderEffect infinite  ; */
+}
+
+.drum-pad:focus {
+  
+  border-bottom: var(--focusBtn);
+  outline: none;
+}
+
+.drum-pad:hover .key-code {
+  transform: scale(0.9)
 }
 
 .key-code {
-  color: white;
+  color: var(--fontColorDark);
   text-align: center;
   font-size: 1rem;
 }
 
 .playing {
-  background-color: orange;
-  transform: scale(1.05);
-  box-shadow: 0 0 1rem #ffc600;
+  /* font-size: 2rem; */
+  animation: colorFade 0.2s ease-out, shadowFade 0.2s ease-out;
+
 }
+
+@keyframes colorFade {
+  0% {
+    background: var(--bgInactiveBtn);
+  }
+  /* Adding a step in the middle */
+  50% {
+    background: var(--bgActiveBtn);
+  }
+  100% {
+    background: var(--bgInactiveBtn);
+  }
+}
+@keyframes shadowFade {
+  from {
+    box-shadow: 0px 0px 5px 2px;
+  }
+  to {
+    box-shadow: 0 0 1rem 0px #ffc600;
+  }
+}
+
+/* @keyframes borderEffect {
+  from {
+
+  }
+} */
+
+/* @media (max-height: 650px) {
+    .drum-pad {
+      min-height: 1.5rem;
+    }
+} */

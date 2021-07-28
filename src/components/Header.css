@@ -1,0 +1,48 @@
+.header {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  color: var(--fontColorDark);
+  width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.title {
+  justify-self: start;
+  align-self: center;
+  font-size: 1.3em;
+  grid-column: 1 / span 2;
+  font-weight: 400;
+  padding-left: 0;
+  margin: 0;
+}
+
+.author {
+  font-family: Waiting for the sunrise;
+  font-size: 1.3em;
+  grid-column: 4 / span 2;
+  font-weight: 500;
+  justify-self: end;
+  align-self: center;
+}
+
+.theme {
+  grid-column: 3 / span 1;
+  justify-self: center;
+  align-self: center;
+  height: 2rem;
+  cursor: pointer;
+}
+
+/* .theme :first-child:hover {
+  fill: blue;
+} */
+svg :hover path{
+  transform: rotateX(2rem);
+}
+
+@media (max-height: 650px) {
+  .theme {
+    height: 2rem;
+  }
+}

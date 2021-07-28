@@ -1,13 +1,16 @@
-.App {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: hsl(240, 16%, 20%);
-
+.dark {
+  background-color: hsl(240, 25%, 10%);
 }
-.title {
-    padding: 0.4rem;
+.light {
+  background-color: hsl(240, 15%, 95%);
+} 
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: var(--bgMainDark); */
 }

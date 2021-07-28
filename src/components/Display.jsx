@@ -8,7 +8,7 @@ function Display(props) {
 
     return (
         <div id="display">
-            {props.sound}
+            <span>{props.sound}</span><span>VOL 78</span> 
         </div>
     )
 }

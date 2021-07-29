@@ -5,6 +5,8 @@ import "./Controls.css";
 
 function Controls({ activeBank, handleVolume, theme, power }) {
 
+  
+
   let bankAClass = classNames('ctrlBtn bankA', { 
     'active': activeBank === "bankA",
     'darkTheme': theme,

@@ -1,10 +1,8 @@
 .dark {
   background-color: hsl(240, 18%, 14%);
-  
 }
 .light {
   background-color: hsl(240, 18%, 75%);
-  
 }
 .drumMachine {
   display: flex;

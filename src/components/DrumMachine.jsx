@@ -14,8 +14,8 @@ function DrumMachine({ theme, toggleDarkScreen }) {
   const [volume, setVolume] = useState(50);
 
   useEffect(() => {
+    console.log("UseEffect Nr.1");
     function removeClass(e) {
-      const drumPad = e.target.parentElement;
       setTimeout(() => {
         setActive(false);
       }, 200);
@@ -33,24 +33,14 @@ function DrumMachine({ theme, toggleDarkScreen }) {
     };
   });
 
-  function playAudio(e) {
-    // console.log(e.currentTarget);
-    let myTarget = e.currentTarget;
-    const audio = document.querySelector(
-      `audio[id="${myTarget.firstChild.id}"]`
-    );
-    if (!audio) return;
-
-    audio.currentTime = 0;
-    audio.play();
-    setName(myTarget.id);
-    setActive(true);
-  }
-
   useEffect(() => {
+    console.log("UseEffect Nr.2");
+
     const ctrlBtnHandler = (e) => {
+      console.log(e.currentTarget)
+      console.log(e.target)
       try {
-        console.log(e.currentTarget.classList.contains("bankA"));
+        
         if (e.currentTarget.classList.contains("bankA")) {
           setBank("bankA");
         } else if (e.currentTarget.classList.contains("bankB")) {
@@ -58,25 +48,45 @@ function DrumMachine({ theme, toggleDarkScreen }) {
         }
       } catch (error) {}
     };
-    console.log(bank);
 
-    const keyIsPressed = (e) => {
-      try {
-        let keyCode = e.key.toUpperCase();
-        const audio = document.querySelector(`audio[id="${keyCode}"]`);
+    const playAudio = (e) => {
 
-        if (!audio.id) return "This key is not available";
-        // console.log(!audio.id);
+      console.log(e.eventPhase)
+      if (e.type === "click") {
+        let myTarget = e.currentTarget;
 
-        if (keyCode === audio.id) {
-          audio.currentTime = 0;
-          audio.play();
+        const audio = document.querySelector(
+          `audio[id="${myTarget.firstChild.id}"]`
+        );
 
-          setName(audio.parentElement.id);
-          setActive(true);
+        if (!audio) return;
+
+        audio.currentTime = 0;
+        audio.volume = volume / 100;
+        audio.play();
+        setName(myTarget.id);
+        setActive(true);
+      }
+
+      if (e.type === "keydown") {
+        try {
+          let keyCode = e.key.toUpperCase();
+          const audio = document.querySelector(`audio[id="${keyCode}"]`);
+
+          if (!audio.id) return "This key is not available";
+          // console.log(!audio.id);
+
+          if (keyCode === audio.id) {
+            audio.currentTime = 0;
+            audio.volume = volume / 100;
+            audio.play();
+
+            setName(audio.parentElement.id);
+            setActive(true);
+          }
+        } catch (error) {
+          console.log("This key is not available");
         }
-      } catch (error) {
-        console.log("This key is not available");
       }
     };
 
@@ -85,17 +95,30 @@ function DrumMachine({ theme, toggleDarkScreen }) {
       btn.addEventListener("click", ctrlBtnHandler);
     });
 
-    window.addEventListener("keydown", keyIsPressed);
+    const pads = document.querySelectorAll(".drum-pad");
+    pads.forEach((pad) => {
+      pad.addEventListener("click", playAudio);
+    });
 
+    window.addEventListener("keydown", playAudio);
     return () => {
-      window.removeEventListener("keydown", keyIsPressed);
+      btns.forEach((btn) => {
+        btn.removeEventListener("click", ctrlBtnHandler);
+      });
+
+      pads.forEach((pad) => {
+        pad.removeEventListener("click", playAudio);
+      });
+
+      window.removeEventListener("keydown", playAudio);
     };
-  }, [name, bank]);
+  }, [name, bank, volume]);
 
   function handleVolume(e) {
-    // const audio = windo
+    let volumeSlider = e.currentTarget.value;
+    console.log(volumeSlider);
+    setVolume(volumeSlider);
   }
-
 
   let className = styles.drumMachine;
   if (theme) {
@@ -106,11 +129,16 @@ function DrumMachine({ theme, toggleDarkScreen }) {
 
   return (
     <div className={className} id="drum-machine">
-      <Header handleClick={toggleDarkScreen} />
-      <Display sound={name} volume={volume} />
-      <Controls activeBank={bank} handleVolume={handleVolume} theme={theme} />
+      <Header power={power} handleClick={toggleDarkScreen} />
+      <Display power={power} sound={name} volume={volume} />
+      <Controls
+        power={power}
+        activeBank={bank}
+        theme={theme}
+        handleVolume={handleVolume}
+      />
       <DrumPads
-        onClick={playAudio}
+        power={power}
         active={active}
         clipName={name}
         activeBank={bank}

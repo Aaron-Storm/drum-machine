@@ -3,7 +3,11 @@
 }
 .light {
   background-color: hsl(240, 15%, 95%);
-} 
+}
+
+.off {
+  opacity: var(--opacity);
+}
 
 .App {
   width: 100vw;

@@ -1,37 +1,47 @@
 import React from "react";
-import { ReactComponent as Power } from "../assets/power.svg"
+import { ReactComponent as Power } from "../assets/power.svg";
+import classNames from 'classnames';
 import "./Controls.css";
 
-function Controls({activeBank, handleVolume, theme }) {
+function Controls({ activeBank, handleVolume, theme, power }) {
 
-  let classNameBankA = 'ctrlBtn bankA';
-  if(activeBank === 'bankA'){
-    classNameBankA += ' active';
-  }
-  let classNameBankB = 'ctrlBtn bankB'
-  if(activeBank === 'bankB'){
-    classNameBankB += ' active';
-  }
-
-  let themeMode = '';
-  if (theme) {
-    themeMode += ' darkTheme';
-  } else {
-    themeMode += ' lightTheme';
-  }
-    
-  
+  let bankAClass = classNames('ctrlBtn bankA', { 
+    'active': activeBank === "bankA",
+    'darkTheme': theme,
+    'lightTheme': !theme
+  })
+  let bankBClass = classNames('ctrlBtn bankB', {
+    'active': activeBank === "bankB",
+    'darkTheme': theme,
+    'lightTheme': !theme
+  })
+  let powerClass = classNames('ctrlBtn', {
+    'darkTheme': theme,
+    'lightTheme': !theme
+  })
 
   return (
     <div className="controls">
-      <div className="ctrlWrapper">
-        <button className={classNameBankA + themeMode}><span className='text'>BANK A</span></button>
-        <button className={`ctrlBtn ${themeMode}`}><Power class="power" /></button>
-        <button className={classNameBankB + themeMode}><span className='text'>BANK B</span></button>
+      <div className={power ? "ctrlWrapper" : "ctrlWrapper"}>
+        <button className={bankAClass}>
+          <span className="text">BANK A</span>
+        </button>
+        <button className={powerClass}>
+          <Power class="power" />
+        </button>
+        <button className={bankBClass}>
+          <span className="text">BANK B</span>
+        </button>
       </div>
 
       <div className="volumeWrapper">
-        <input type="range" className="volume" onChange={handleVolume}/>
+        <input
+          type="range"
+          min="0"
+          max="100"
+          className="volume"
+          onChange={handleVolume}
+        />
       </div>
     </div>
   );

@@ -1,28 +1,42 @@
+import { useState } from 'react'
+import classNames from 'classnames'
 import "./DrumPad.css";
 
+function DrumPad({className, theme, id, src, children}) {
 
-function DrumPad(props) {
+  const [hover, setHover] = useState(false);
 
-  let className = props.className;
-  if (props.theme) {
-    className += " darkBtn";
-  } else {
-    className += " lightBtn";
+  function handleHover(e) {
+    console.log('hover')
+
+    setHover(!hover);
   }
-  
-  return (
-    <button className={className} id={props.id} onClick={props.onClick}>
 
+
+  let btnClass = classNames( className, {
+    'darkBtn': theme,
+    'lightBtn': !theme,
+    'darkBtnHover': hover && theme,
+    'lightBtnHover': hover && !theme,
+    'hoverScale': hover
+  })
+  
+
+  return (
+    <button 
+    className={btnClass} 
+    id={id} 
+    onMouseEnter={handleHover}
+    onMouseLeave={handleHover}
+    >
       <audio
         className="clip"
-        src={props.src}
+        src={src}
         type="audio/wav"
-        id={props.children}
-        // crossOrigin="anonymous"
+        id={children}
         preload="auto"
-        // onChange={}
       ></audio>
-      <span className="key-code">{props.children}</span>
+      <span className="key-code">{children}</span>
     </button>
   );
 }

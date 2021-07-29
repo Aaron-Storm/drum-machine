@@ -1,8 +1,24 @@
 .darkBtn {
   background-color: var(--bgInactiveBtnDark);
+  box-shadow: var(--shadowBtnDark);
+}
+.darkBtnHover {
+  box-shadow: var(--shadowHoverBtnDark);
+}
+.darkBtn:focus {
+  border-bottom: var(--focusBtnDark);
+  outline: none;
 }
 .lightBtn {
   background-color: var(--bgInactiveBtnLight);
+  box-shadow: var(--shadowBtnLight);
+}
+.lightBtnHover {
+  box-shadow: var(--shadowHoverBtnLight);
+}
+.lightBtn:focus {
+  border-bottom: var(--focusBtnLight);
+  outline: none;
 }
 
 .drum-pad {
@@ -13,23 +29,12 @@
   border-radius: 0.7em;
   cursor: pointer;
   border: none;
-  box-shadow: var(--shadowBtnDark);
+
   min-height: 2rem;
 }
 
-.drum-pad:hover {
-  box-shadow: var(--shadowHoverBtn);
-  /* animation: borderEffect infinite  ; */
-}
-
-.drum-pad:focus {
-  
-  border-bottom: var(--focusBtn);
-  outline: none;
-}
-
-.drum-pad:hover .key-code {
-  transform: scale(0.9)
+.hoverScale .key-code {
+  transform: scale(0.9);
 }
 
 .key-code {
@@ -41,7 +46,6 @@
 .playing {
   /* font-size: 2rem; */
   animation: colorFade 0.2s ease-out, shadowFade 0.2s ease-out;
-
 }
 
 @keyframes colorFade {

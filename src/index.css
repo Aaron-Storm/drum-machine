@@ -9,6 +9,9 @@
 
 body {
 
+  /* OFF Theme */
+  --opacity: 0.2;
+
 /*Dark Theme Colors */
   
   --bgMainDark: hsl(240, 25%, 10%);
@@ -16,20 +19,25 @@ body {
   --shadowBtnDark: 0px 0px 5px 1.5px rgb(83, 93, 116);
   --fontColorDark: white;
   --bgInactiveBtnDark: hsl(225, 36%, 7%);
+  --shadowHoverBtnDark: 0px 0px 7px -2px rgb(255, 255, 255) inset;
 
 /* Light Theme Colors */
 
   --bgMainLight: hsl(240, 15%, 95%);
   --bgDrumMachineLight: hsl(240, 18%, 75%);
+  --shadowBtnLight: 0px 0px 3px 1.2px hsl(240, 25%, 10%);
   --bgInactiveBtnLight: hsl(232, 10%, 50%);
+  --shadowHoverBtnLight: 0px 0px 7px -2px rgb(15, 15, 15) inset;
+
 
 /* Button effects */
   --bgActiveBtn: hsl(43, 100%, 58% );
   
 
-  --shadowHoverBtn: 0px 0px 7px -2px rgb(255, 255, 255) inset;
+  
 
-  --focusBtn: 0.05rem solid white;
+  --focusBtnDark: 0.05rem solid white;
+  --focusBtnLight: 0.05rem solid rgb(0, 0, 0);
 
   --displayActive: hsl(68, 90%, 59%);
 

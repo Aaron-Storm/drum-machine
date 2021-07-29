@@ -1,8 +1,25 @@
 .darkTheme {
   background-color: var(--bgInactiveBtnDark);
+  box-shadow: var(--shadowBtnDark);
 }
+.darkTheme:hover {
+  box-shadow: var(--shadowHoverBtnDark);
+}
+.darkTheme:focus {
+  border-bottom: var(--focusBtnDark);
+  outline: none;
+}
+
 .lightTheme {
   background-color: var(--bgInactiveBtnLight);
+  box-shadow: var(--shadowBtnLight);
+}
+.lightTheme:hover {
+  box-shadow: var(--shadowHoverBtnLight)
+}
+.lightTheme:focus {
+  border-bottom: var(--focusBtnLight);
+  outline: none;
 }
 
 
@@ -17,16 +34,9 @@
   justify-content: center;
   align-items: center;
   color: var(--fontColorDark);
-  /* background-color: var(--bgInactiveBtnDark); */
   border-radius: 0.7em;
   cursor: pointer;
   border: none;
-  box-shadow: var(--shadowBtnDark);
-  /* min-height: 2rem; */
-}
-
-.ctrlBtn:hover {
-  box-shadow: var(--shadowHoverBtn);
 }
 
 .ctrlBtn:hover .power {
@@ -35,10 +45,6 @@
 
 .ctrlBtn:hover .text {
   transform: scale(0.9)
-}
-.ctrlBtn:focus {
-  border-bottom: var(--focusBtn);
-  outline: none;
 }
 
 .active{

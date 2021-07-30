@@ -117,7 +117,7 @@ const BankB = [
 
 
 
-function DrumPads({ clipName, active, onClick, activeBank, theme }) {
+function DrumPads({ clipName, active, onClick, activeBank, theme, power }) {
 
  const targetBank = activeBank === 'bankA'? BankA : BankB 
 
@@ -139,6 +139,7 @@ function DrumPads({ clipName, active, onClick, activeBank, theme }) {
             children={clip.label}
             onClick={onClick}
             theme={theme}
+            power={power}
           />
         );
       })}

@@ -2,7 +2,7 @@
   background-color: var(--bgInactiveBtnDark);
   box-shadow: var(--shadowBtnDark);
 }
-.darkTheme:hover {
+.darkThemeHover {
   box-shadow: var(--shadowHoverBtnDark);
 }
 .darkTheme:focus {
@@ -14,7 +14,7 @@
   background-color: var(--bgInactiveBtnLight);
   box-shadow: var(--shadowBtnLight);
 }
-.lightTheme:hover {
+.lightThemeHover {
   box-shadow: var(--shadowHoverBtnLight)
 }
 .lightTheme:focus {
@@ -39,11 +39,11 @@
   border: none;
 }
 
-.ctrlBtn:hover .power {
+.ctrlBtnHover .power {
   transform: scale(0.9)
 }
 
-.ctrlBtn:hover .text {
+.ctrlBtnHover .text {
   transform: scale(0.9)
 }
 

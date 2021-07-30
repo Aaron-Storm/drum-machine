@@ -1,8 +1,10 @@
-.dark {
+.darkDrumMachine {
   background-color: hsl(240, 18%, 14%);
+  /* color:red; */
 }
-.light {
+.lightDrumMachine {
   background-color: hsl(240, 18%, 75%);
+  /* color: hsl(241deg 52% 22%); */
 }
 .drumMachine {
   display: flex;
@@ -22,7 +24,7 @@
 }
 
 @media (max-height: 650px) {
-  .drum-machine {
+  .drumMachine {
     height: 90%;
   }
 }

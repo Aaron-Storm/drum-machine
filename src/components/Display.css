@@ -1,4 +1,4 @@
-#display {
+.display {
   display: flex;
   justify-content: space-between;
   color: black;
@@ -14,8 +14,12 @@
   box-shadow: 0 0 0.6rem 0.2rem rgba(0, 0, 0, 0.5) inset;
 }
 
+.hiddenDisplay {
+  opacity: 0;
+}
+
 @media (max-height: 650px) {
-  #display {
+  .display {
     font-size: 1rem;
   }
 }

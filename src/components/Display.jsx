@@ -1,14 +1,21 @@
-import React from 'react'
+import classNames from 'classnames'
 import './Display.css'
 
-function Display(props) {
 
 
+function Display({sound, volume, power}) {
+
+    let displayClass = classNames('display', {
+        'off': !power,
+    })
+    let displayText = classNames({
+        'hiddenDisplay': !power
+    })
 
 
     return (
-        <div id="display">
-            <span>{props.sound}</span><span>VOL {props.volume}</span> 
+        <div className={displayClass} id="display">
+            <span className={displayText}>{sound}</span><span className={displayText}>VOL {volume}</span> 
         </div>
     )
 }

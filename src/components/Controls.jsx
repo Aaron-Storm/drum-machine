@@ -1,42 +1,69 @@
-import React from "react";
+// import { useState } from "react";
 import { ReactComponent as Power } from "../assets/power.svg";
-import classNames from 'classnames';
+import Button from "./Button.jsx";
+import classNames from "classnames";
 import "./Controls.css";
 
 function Controls({ activeBank, handleVolume, theme, power }) {
 
-  
+  let wrapperClass = classNames("ctrlWrapper", {
+    off: !power,
+  });
 
-  let bankAClass = classNames('ctrlBtn bankA', { 
-    'active': activeBank === "bankA",
-    'darkTheme': theme,
-    'lightTheme': !theme
+  let bankAClass = classNames("ctrlBtn bankA", {
+    active: activeBank === "bankA",
+    darkTheme: theme,
+    lightTheme: !theme,
+  });
+  let bankBClass = classNames("ctrlBtn bankB", {
+    active: activeBank === "bankB",
+    darkTheme: theme,
+    lightTheme: !theme,
+  });
+  let powerClass = classNames("ctrlBtn pwr", {
+    darkTheme: theme,
+    lightTheme: !theme,
+  });
+
+  let inputClass = classNames("volumeWrapper", {
+    off: !power
   })
-  let bankBClass = classNames('ctrlBtn bankB', {
-    'active': activeBank === "bankB",
-    'darkTheme': theme,
-    'lightTheme': !theme
-  })
-  let powerClass = classNames('ctrlBtn', {
-    'darkTheme': theme,
-    'lightTheme': !theme
-  })
+
+  const btnProps = [
+    {
+      className: bankAClass,
+      id: "bankA",
+      children: <span className="text">BANK A</span>,
+    },
+    {
+      className: powerClass,
+      id: "pwr",
+      children: <Power class="power" />,
+    },
+    {
+      className: bankBClass,
+      id: "bankB",
+      children: <span className="text">BANK B</span>,
+    },
+  ];
 
   return (
     <div className="controls">
-      <div className={power ? "ctrlWrapper" : "ctrlWrapper"}>
-        <button className={bankAClass}>
-          <span className="text">BANK A</span>
-        </button>
-        <button className={powerClass}>
-          <Power class="power" />
-        </button>
-        <button className={bankBClass}>
-          <span className="text">BANK B</span>
-        </button>
+      <div className={wrapperClass}>
+        {btnProps.map((prop) => {
+          return (
+            <Button
+              className={prop.className}
+              id={prop.id}
+              children={prop.children}
+              power={power}
+              theme={theme}
+            />
+          );
+        })}
       </div>
 
-      <div className="volumeWrapper">
+      <div className={inputClass}>
         <input
           type="range"
           min="0"

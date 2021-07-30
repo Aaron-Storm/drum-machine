@@ -1,23 +1,22 @@
 import DrumMachine from "./components/DrumMachine";
 import { useState } from "react";
+import classNames from "classnames";
 import "./App.css";
 
 function App() {
   const [theme, setTheme] = useState(true);
 
-  let className = "App";
-  if (theme) {
-    className += " dark";
-  } else {
-    className += " light";
-  }
+  let appClass = classNames( 'App', { 
+    'dark': theme,
+    'light': !theme,
+  })
+
   function toggleDarkScreen() {
-    // alert("Dark Mode toggle");
     setTheme(!theme);
   }
 
   return (
-    <div className={className}>
+    <div className={appClass}>
       <DrumMachine toggleDarkScreen={toggleDarkScreen} theme={theme} />
     </div>
   );

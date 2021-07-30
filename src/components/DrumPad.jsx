@@ -2,23 +2,22 @@ import { useState } from 'react'
 import classNames from 'classnames'
 import "./DrumPad.css";
 
-function DrumPad({className, theme, id, src, children}) {
+function DrumPad({className, theme, id, src, children, power}) {
 
   const [hover, setHover] = useState(false);
 
   function handleHover(e) {
-    console.log('hover')
-
     setHover(!hover);
   }
 
 
   let btnClass = classNames( className, {
+    'off': !power,
     'darkBtn': theme,
     'lightBtn': !theme,
-    'darkBtnHover': hover && theme,
-    'lightBtnHover': hover && !theme,
-    'hoverScale': hover
+    'darkBtnHover': power && hover && theme,
+    'lightBtnHover': power && hover && !theme,
+    'hoverScale': power && hover
   })
   
 

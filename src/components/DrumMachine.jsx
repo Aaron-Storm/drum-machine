@@ -3,7 +3,7 @@ import Display from "./Display";
 import DrumPads from "./DrumPads";
 import Header from "./Header";
 import Controls from "./Controls";
-// import "./DrumMachine.css";
+import classNames from 'classnames';
 import styles from "./DrumMachine.module.css";
 
 function DrumMachine({ theme, toggleDarkScreen }) {
@@ -37,14 +37,17 @@ function DrumMachine({ theme, toggleDarkScreen }) {
     console.log("UseEffect Nr.2");
 
     const ctrlBtnHandler = (e) => {
-      console.log(e.currentTarget)
-      console.log(e.target)
+      // console.log(e.currentTarget)
+      // console.log(e.target)
       try {
         
         if (e.currentTarget.classList.contains("bankA")) {
           setBank("bankA");
         } else if (e.currentTarget.classList.contains("bankB")) {
           setBank("bankB");
+        } else if (e.currentTarget.classList.contains("pwr")) {
+          setPower(!power)
+          console.log('power toggle')
         }
       } catch (error) {}
     };
@@ -112,7 +115,7 @@ function DrumMachine({ theme, toggleDarkScreen }) {
 
       window.removeEventListener("keydown", playAudio);
     };
-  }, [name, bank, volume]);
+  }, [name, bank, volume, power]);
 
   function handleVolume(e) {
     let volumeSlider = e.currentTarget.value;
@@ -120,15 +123,16 @@ function DrumMachine({ theme, toggleDarkScreen }) {
     setVolume(volumeSlider);
   }
 
-  let className = styles.drumMachine;
-  if (theme) {
-    className += ` ${styles.dark}`;
-  } else {
-    className += ` ${styles.light}`;
-  }
+  let cx = classNames.bind(styles);
+
+  let drumMachineClass = cx({
+    [styles.drumMachine]: true,
+    [styles.darkDrumMachine]: theme,
+    [styles.lightDrumMachine]: !theme
+  })
 
   return (
-    <div className={className} id="drum-machine">
+    <div className={drumMachineClass} id="drum-machine">
       <Header power={power} handleClick={toggleDarkScreen} />
       <Display power={power} sound={name} volume={volume} />
       <Controls

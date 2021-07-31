@@ -11,12 +11,12 @@ function Controls({ activeBank, handleVolume, theme, power }) {
   });
 
   let bankAClass = classNames("ctrlBtn bankA", {
-    active: activeBank === "bankA",
+    active: power && activeBank === "bankA",
     darkTheme: theme,
     lightTheme: !theme,
   });
   let bankBClass = classNames("ctrlBtn bankB", {
-    active: activeBank === "bankB",
+    active: power && activeBank === "bankB",
     darkTheme: theme,
     lightTheme: !theme,
   });
@@ -29,6 +29,11 @@ function Controls({ activeBank, handleVolume, theme, power }) {
     off: !power
   })
 
+  let iconClass = classNames('power', {
+    iconOff: !power,
+
+  })
+
   const btnProps = [
     {
       className: bankAClass,
@@ -38,7 +43,7 @@ function Controls({ activeBank, handleVolume, theme, power }) {
     {
       className: powerClass,
       id: "pwr",
-      children: <Power class="power" />,
+      children: <Power class={iconClass} />,
     },
     {
       className: bankBClass,

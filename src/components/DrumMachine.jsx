@@ -55,7 +55,7 @@ function DrumMachine({ theme, toggleDarkScreen }) {
     const playAudio = (e) => {
 
       console.log(e.eventPhase)
-      if (e.type === "click") {
+      if (e.type === "click" && power) {
         let myTarget = e.currentTarget;
 
         const audio = document.querySelector(
@@ -71,7 +71,7 @@ function DrumMachine({ theme, toggleDarkScreen }) {
         setActive(true);
       }
 
-      if (e.type === "keydown") {
+      if (e.type === "keydown" && power) {
         try {
           let keyCode = e.key.toUpperCase();
           const audio = document.querySelector(`audio[id="${keyCode}"]`);

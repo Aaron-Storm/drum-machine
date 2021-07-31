@@ -7,7 +7,9 @@
 }
 .darkBtn:focus {
   border-bottom: var(--focusBtnDark);
+  /* box-shadow: 0px -0.2rem 0rem -0.1rem white inset; */
   outline: none;
+
 }
 .lightBtn {
   background-color: var(--bgInactiveBtnLight);

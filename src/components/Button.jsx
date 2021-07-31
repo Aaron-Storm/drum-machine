@@ -5,6 +5,7 @@ const Button = ({ className, id, power, children, theme }) => {
 
 
   const [hover, setHover] = useState(false);
+  // const [focus, setFocus] = useState(false)
 
   function handleHover(e) {
     

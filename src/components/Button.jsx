@@ -5,17 +5,24 @@ const Button = ({ className, id, power, children, theme }) => {
 
 
   const [hover, setHover] = useState(false);
-  // const [focus, setFocus] = useState(false)
+  const [focus, setFocus] = useState(false)
 
   function handleHover(e) {
     
     setHover(!hover);
   }
 
+  function handleFocus(e) {
+    setFocus(!focus);
+  }
+
   let btnClass = classNames( className, {
       'darkThemeHover': power && hover && theme,
       'lightThemeHover': power && hover && !theme,
-      'ctrlBtnHover': power && hover
+      'ctrlBtnHover': power && hover,
+      'darkThemeFocus': focus && theme,
+      'lightThemeFocus': focus && !theme,
+
   })
 
   return (
@@ -24,6 +31,8 @@ const Button = ({ className, id, power, children, theme }) => {
       id={id}
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
+      onFocus={handleFocus}
+      onBlur={handleFocus}
     >
       {children}
     </button>

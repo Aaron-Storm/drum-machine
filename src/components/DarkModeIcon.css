@@ -1,0 +1,14 @@
+.theme {
+  grid-column: 3 / span 1;
+  justify-self: center;
+  align-self: center;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.theme:focus {
+  background-color: var(--bgActiveBtn);
+  width: 2rem;
+  border-radius: 9rem;
+  outline: none;
+}

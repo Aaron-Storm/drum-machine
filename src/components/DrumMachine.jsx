@@ -54,7 +54,7 @@ function DrumMachine({ theme, toggleDarkScreen }) {
 
     const playAudio = (e) => {
 
-      console.log(e.eventPhase)
+      // console.log(e.eventPhase)
       if (e.type === "click" && power) {
         let myTarget = e.currentTarget;
 

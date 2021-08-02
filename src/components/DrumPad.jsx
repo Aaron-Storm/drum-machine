@@ -27,6 +27,7 @@ function DrumPad({className, theme, id, src, children, power}) {
     id={id} 
     onMouseEnter={handleHover}
     onMouseLeave={handleHover}
+    tabIndex={!power ? -1: 0}
     >
       <audio
         className="clip"

@@ -4,6 +4,16 @@ import './index.css';
 import App from './App.js';
 import reportWebVitals from './reportWebVitals';
 
+const fccWrapper = document.getElementById('fcc_test_suite_wrapper');
+fccWrapper.setAttribute('tabindex', '-1');
+const childNodes = fccWrapper.shadowRoot.childNodes
+for(let i = 0; i < childNodes.length; i++) {
+  if(childNodes[i].nodeName === 'STYLE') {
+    console.log(childNodes.textContent)
+  }}
+setTimeout(() => console.log(childNodes), 1000 )
+
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

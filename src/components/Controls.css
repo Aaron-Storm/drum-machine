@@ -5,8 +5,9 @@
 .darkThemeHover {
   box-shadow: var(--shadowHoverBtnDark);
 }
-.darkTheme:focus {
-  border-bottom: var(--focusBtnDark);
+
+.darkThemeFocus {
+  border-bottom: var(--focusBtnDark) !important;
   /* box-shadow: 0px -0.2rem 0rem -0.1rem white inset; */
   outline: none;
 }
@@ -18,7 +19,7 @@
 .lightThemeHover {
   box-shadow: var(--shadowHoverBtnLight)
 }
-.lightTheme:focus {
+.lightThemeFocus {
   border-bottom: var(--focusBtnLight);
   outline: none;
 }

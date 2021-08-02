@@ -9,6 +9,13 @@
   opacity: var(--opacity);
 }
 
+.hidden {
+  content-visibility: hidden;
+}
+
+.hiddenInput {
+  visibility: hidden;
+}
 .App {
   width: 100vw;
   height: 100vh;

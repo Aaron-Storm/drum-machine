@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Aaron-Storm/drum-machine/static/css/main.e0abcfb0.chunk.css",
+    "main.js": "/Aaron-Storm/drum-machine/static/js/main.08809324.chunk.js",
+    "main.js.map": "/Aaron-Storm/drum-machine/static/js/main.08809324.chunk.js.map",
+    "runtime-main.js": "/Aaron-Storm/drum-machine/static/js/runtime-main.fedb87ba.js",
+    "runtime-main.js.map": "/Aaron-Storm/drum-machine/static/js/runtime-main.fedb87ba.js.map",
+    "static/js/2.513dff5f.chunk.js": "/Aaron-Storm/drum-machine/static/js/2.513dff5f.chunk.js",
+    "static/js/2.513dff5f.chunk.js.map": "/Aaron-Storm/drum-machine/static/js/2.513dff5f.chunk.js.map",
+    "static/js/3.d11b194b.chunk.js": "/Aaron-Storm/drum-machine/static/js/3.d11b194b.chunk.js",
+    "static/js/3.d11b194b.chunk.js.map": "/Aaron-Storm/drum-machine/static/js/3.d11b194b.chunk.js.map",
+    "index.html": "/Aaron-Storm/drum-machine/index.html",
+    "static/css/main.e0abcfb0.chunk.css.map": "/Aaron-Storm/drum-machine/static/css/main.e0abcfb0.chunk.css.map",
+    "static/js/2.513dff5f.chunk.js.LICENSE.txt": "/Aaron-Storm/drum-machine/static/js/2.513dff5f.chunk.js.LICENSE.txt",
+    "static/media/power.de8d9be2.svg": "/Aaron-Storm/drum-machine/static/media/power.de8d9be2.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fedb87ba.js",
+    "static/js/2.513dff5f.chunk.js",
+    "static/css/main.e0abcfb0.chunk.css",
+    "static/js/main.08809324.chunk.js"
+  ]
+}

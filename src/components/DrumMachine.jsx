@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Display from "./Display";
 import DrumPads from "./DrumPads";
 import Header from "./Header";
@@ -12,6 +12,8 @@ function DrumMachine({ theme, toggleDarkScreen }) {
   const [active, setActive] = useState(false);
   const [bank, setBank] = useState("bankA");
   const [volume, setVolume] = useState(50);
+
+  const audioRef = useRef(null)
 
   useEffect(() => {
     console.log("UseEffect Nr.1");
@@ -62,10 +64,22 @@ function DrumMachine({ theme, toggleDarkScreen }) {
           `audio[id="${myTarget.firstChild.id}"]`
         );
 
+        // const audio = audioRef;
+
+        console.log(audio.current)
+
         if (!audio) return;
+
+        // const audioPromise = audio.play();
 
         audio.currentTime = 0;
         audio.volume = volume / 100;
+
+        // if(audioPromise !== undefined) {
+        //   audioPromise.then(function() {
+        //     console.log('audio is playing');
+        //   }).catch(error => console.log('error'))
+        // }
         audio.play();
         setName(myTarget.id);
         setActive(true);
@@ -147,6 +161,7 @@ function DrumMachine({ theme, toggleDarkScreen }) {
         clipName={name}
         activeBank={bank}
         theme={theme}
+        audioRef={audioRef}
       />
     </div>
   );

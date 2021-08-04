@@ -38,16 +38,19 @@ function Controls({ activeBank, handleVolume, theme, power }) {
     {
       className: bankAClass,
       id: "bankA",
+      ariaLabel: "Bank A",
       children: <span className="text">BANK A</span>,
     },
     {
       className: powerClass,
       id: "pwr",
+      ariaLabel: "Power Button",
       children: <Power className={iconClass} />,
     },
     {
       className: bankBClass,
       id: "bankB",
+      ariaLabel: "Bank B",
       children: <span className="text">BANK B</span>,
     },
   ];
@@ -64,6 +67,7 @@ function Controls({ activeBank, handleVolume, theme, power }) {
               power={power}
               theme={theme}
               key={prop.id}
+              ariaLabel={prop.ariaLabel}
             />
           );
         })}
@@ -72,8 +76,7 @@ function Controls({ activeBank, handleVolume, theme, power }) {
       <div className={inputClass}>
         <input
           type="range"
-          min="0"
-          max="100"
+          aria-label='Volume'
           className="volume"
           onChange={handleVolume}
           tabIndex={!power ? -1 : 0}

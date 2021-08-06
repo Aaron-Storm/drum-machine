@@ -4,7 +4,7 @@
   color: var(--fontColorDark);
   width: 100%;
   padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 .title {
@@ -26,14 +26,6 @@
   align-self: center;
 }
 
-.theme {
-  grid-column: 3 / span 1;
-  justify-self: center;
-  align-self: center;
-  height: 2rem;
-  cursor: pointer;
-}
-
 /* .theme :first-child:hover {
   fill: blue;
 } */
@@ -46,3 +38,26 @@ svg :hover path{
     height: 2rem;
   }
 }
+
+@media (max-width:420px) {
+  .header {
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .title {
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 1;
+    font-size: 1.2em;
+    padding: 0.2em 0;
+  }
+
+  .author {
+    grid-column: 1 / span 4;
+    grid-row: 2 / span 1;
+    font-size: small;
+    justify-self: start;
+  }
+
+}
+
+

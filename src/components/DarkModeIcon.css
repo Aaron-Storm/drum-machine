@@ -12,3 +12,11 @@
   border-radius: 9rem;
   outline: none;
 }
+
+@media (max-width: 420px) {
+  .theme {
+    grid-column: 5 / span 2;
+    grid-row: 1 / span 2;
+    height: 2.7rem;
+  }
+}

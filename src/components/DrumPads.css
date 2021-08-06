@@ -6,3 +6,17 @@
     height: 60%;
     background-color:transparent;  
 }
+@media (max-width: 420px) and (min-height: 560px) {
+    .drum-pads {
+      height: 60%;
+      /* max-height: 40rem; */
+  }
+  }
+  
+@media (max-width: 420px) and (min-height: 660px) {
+    .drum-pads {
+      height: 45%;
+      /* max-height: 40rem; */
+  }
+  }
+  

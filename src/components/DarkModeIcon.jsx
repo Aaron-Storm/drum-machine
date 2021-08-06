@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { useButton } from "@react-aria/button";
 import './DarkModeIcon.css';
 
@@ -43,4 +43,4 @@ function DarkModeIcon(props) {
   );
 }
 
-export default DarkModeIcon;
+export default React.memo(DarkModeIcon);

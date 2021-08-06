@@ -179,8 +179,28 @@ input[type=range]::-webkit-slider-thumb {
     background: var(--bgInactiveBtnDark);
   }
 
-  @media (max-height: 650px) {
+  /* @media (max-height: 650px) {
       .ctrlBtn {
           height: 2.6rem;
       }
+  } */
+
+  @media (max-width: 420px) {
+    .ctrlBtn {
+      height: 3.6rem;
+    }
   }
+
+  @media (max-width: 420px) and (min-height: 560px) {
+    
+  }
+
+  @media (max-width: 420px) and (min-height: 660px) {
+    input[type="range"] {
+      padding-top: 2rem;
+      margin: 0;
+    }
+  }
+  
+  
+  

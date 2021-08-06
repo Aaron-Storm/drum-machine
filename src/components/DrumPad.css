@@ -31,6 +31,7 @@
   border: none;
   border-radius: 0.7em;
   min-height: 2rem;
+  max-height: 4.5rem;
 }
 
 .hoverScale .key-code {
@@ -67,15 +68,3 @@
     box-shadow: 0 0 1rem 0px #ffc600;
   }
 }
-
-/* @keyframes borderEffect {
-  from {
-
-  }
-} */
-
-/* @media (max-height: 650px) {
-    .drum-pad {
-      min-height: 1.5rem;
-    }
-} */

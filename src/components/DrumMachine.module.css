@@ -22,9 +22,27 @@
   padding-top: 0.2rem;
   min-height: 21rem;
 }
+/* Mobile View */
 
-@media (max-height: 650px) {
+@media (max-width: 420px) and (min-height: 560px) {
   .drumMachine {
     height: 90%;
-  }
+    max-height: 40rem;
+}
+}
+
+
+@media (max-width: 420px) and (min-height: 660px) {
+  .drumMachine {
+    height: 95%;
+    width: 95;
+    max-height: 40rem;
+    justify-content: space-between;
+}
+}
+
+
+/* Desktop View */
+@media (min-width: 720px) {
+
 }

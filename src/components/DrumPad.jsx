@@ -2,7 +2,7 @@ import { useState } from "react";
 import classNames from "classnames";
 import "./DrumPad.css";
 
-function DrumPad({ className, theme, id, src, children, power, audioRef, index, handleClick }) {
+function DrumPad({ className, theme, id, src, children, power, audioRef, index, handleClick, handlePlaying }) {
   const [hover, setHover] = useState(false);
   const [focus, setFocus] = useState(false);
 
@@ -34,7 +34,8 @@ function DrumPad({ className, theme, id, src, children, power, audioRef, index, 
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
       onFocus={handleFocus}
-      onBlur={handleFocus}
+      onBlur={handleFocus} 
+      onPlaying={handlePlaying}
       tabIndex={!power ? -1 : 0}
       
     >

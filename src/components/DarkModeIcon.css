@@ -19,4 +19,9 @@
     grid-row: 1 / span 2;
     height: 2.7rem;
   }
+
+  .theme:focus {
+    /* width: 2.7rem; */
+    background-color: transparent;
+  }
 }

@@ -123,6 +123,7 @@ function DrumPads({
   theme,
   power,
   audioRef,
+  handlePlaying
   
 }) {
   const targetBank = activeBank === "bankA" ? BankA : BankB;
@@ -140,6 +141,7 @@ function DrumPads({
             key={clip.id}
             children={clip.label}
             handleClick={handleClick}
+            handlePlaying={handlePlaying}
             theme={theme}
             power={power}
             index={index}

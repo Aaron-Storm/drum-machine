@@ -1,5 +1,5 @@
 import DrumMachine from "./components/DrumMachine";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import classNames from "classnames";
 import "./App.css";
 
@@ -18,27 +18,8 @@ function App() {
     light: !theme,
   });
 
-  useEffect(() => {
-    console.log("UseEffect Nr.1");
-    function removeClass(e) {
-      setTimeout(() => {
-        setActive(false);
-      }, 200);
-    }
+  //
 
-    const clips = Array.from(document.querySelectorAll(".clip"));
-
-    clips.forEach((clip) => {
-      // console.log(clip);
-      clip.addEventListener("playing", removeClass);
-    });
-    // console.log(clips);
-    return () => {
-      window.removeEventListener("playing", removeClass);
-    };
-  });
-
-  
   function toggleDarkScreen() {
     setTheme(!theme);
   }
@@ -57,15 +38,19 @@ function App() {
     }
 
     if (e.type === "keydown" && power) {
-      let myCurrentKey = e.key.toUpperCase();
-      for (let i = 0; i < audioRef.current.length; i++) {
-        if (myCurrentKey === audioRef.current[i].id) {
-          audioRef.current[i].currentTime = 0;
-          audioRef.current[i].volume = volume / 100;
-          audioRef.current[i].play();
-          setName(audioRef.current[i].parentElement.id);
-          setActive(true);
+      try {
+        let myCurrentKey = e.key.toUpperCase();
+        for (let i = 0; i < audioRef.current.length; i++) {
+          if (myCurrentKey === audioRef.current[i].id) {
+            audioRef.current[i].currentTime = 0;
+            audioRef.current[i].volume = volume / 100;
+            audioRef.current[i].play();
+            setName(audioRef.current[i].parentElement.id);
+            setActive(true);
+          }
         }
+      } catch (error) {
+        console.log('test');
       }
     }
   }
@@ -88,6 +73,12 @@ function App() {
     } catch (error) {}
   };
 
+  function removeClassTest(e) {
+    setTimeout(() => {
+      setActive(false);
+    }, 200);
+  }
+
   return (
     <div className={appClass} onKeyDown={playAudio} tabIndex={-1}>
       <DrumMachine
@@ -102,6 +93,7 @@ function App() {
         handleVolume={handleVolume}
         activePad={active}
         ctrlClickHandler={ctrlBtnHandlerTest}
+        handlePlaying={removeClassTest}
       />
     </div>
   );

@@ -17,7 +17,8 @@ function DrumMachine({
   volume,
   activePad,
   handleVolume,
-  ctrlClickHandler
+  ctrlClickHandler,
+  handlePlaying
 }) {
 
   
@@ -49,6 +50,7 @@ function DrumMachine({
         theme={theme}
         audioRef={audioRef}
         handleClick={handleClick}
+        handlePlaying={handlePlaying}
       />
     </div>
   );

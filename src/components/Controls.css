@@ -179,11 +179,15 @@ input[type=range]::-webkit-slider-thumb {
     background: var(--bgInactiveBtnDark);
   }
 
-  /* @media (max-height: 650px) {
+  @media (max-height: 650px) {
       .ctrlBtn {
-          height: 2.6rem;
+          height: 2.5rem;
       }
-  } */
+
+      .power {
+        width: 1.5rem;
+      }
+  }
 
   @media (max-width: 420px) {
     .ctrlBtn {

@@ -2,7 +2,7 @@ import { useState } from "react";
 import classNames from "classnames";
 import "./DrumPad.css";
 
-function DrumPad({ className, theme, id, src, children, power, audioRef }) {
+function DrumPad({ className, theme, id, src, children, power, audioRef, index, handleClick }) {
   const [hover, setHover] = useState(false);
   const [focus, setFocus] = useState(false);
 
@@ -30,14 +30,16 @@ function DrumPad({ className, theme, id, src, children, power, audioRef }) {
     <button
       className={btnClass}
       id={id}
+      onClick={handleClick}
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
       onFocus={handleFocus}
       onBlur={handleFocus}
       tabIndex={!power ? -1 : 0}
+      
     >
       <audio
-        ref={audioRef}
+        ref={el => audioRef.current[index] = el}
         className="clip"
         src={src}
         type="audio/wav"

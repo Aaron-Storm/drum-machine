@@ -10,7 +10,7 @@
 .title {
   justify-self: start;
   align-self: center;
-  font-size: 1.3em;
+  font-size: 1.2em;
   grid-column: 1 / span 2;
   font-weight: 400;
   padding-left: 0;

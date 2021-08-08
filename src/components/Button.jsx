@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classNames from "classnames";
 
-const Button = ({ className, id, power, children, theme, ariaLabel }) => {
+const Button = ({ className, id, power, children, theme, ariaLabel, ctrlClickHandler }) => {
 
 
   const [hover, setHover] = useState(false);
@@ -30,6 +30,7 @@ const Button = ({ className, id, power, children, theme, ariaLabel }) => {
       className={btnClass}
       id={id}
       aria-label={ariaLabel}
+      onClick={ctrlClickHandler}
       onMouseEnter={handleHover}
       onMouseLeave={handleHover}
       onFocus={handleFocus}

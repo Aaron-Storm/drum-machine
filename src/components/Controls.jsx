@@ -4,7 +4,7 @@ import Button from "./Button.jsx";
 import classNames from "classnames";
 import "./Controls.css";
 
-function Controls({ activeBank, handleVolume, theme, power }) {
+function Controls({ activeBank, handleVolume, theme, power, ctrlClickHandler }) {
   let wrapperClass = classNames("ctrlWrapper", {
     off: !power,
   });
@@ -64,6 +64,7 @@ function Controls({ activeBank, handleVolume, theme, power }) {
               className={prop.className}
               id={prop.id}
               children={prop.children}
+              ctrlClickHandler={ctrlClickHandler}
               power={power}
               theme={theme}
               key={prop.id}

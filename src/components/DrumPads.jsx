@@ -118,17 +118,18 @@ const BankB = [
 function DrumPads({
   clipName,
   active,
-  onClick,
+  handleClick,
   activeBank,
   theme,
   power,
   audioRef,
+  
 }) {
   const targetBank = activeBank === "bankA" ? BankA : BankB;
 
   return (
     <div className="drum-pads">
-      {targetBank.map((clip) => {
+      {targetBank.map((clip, index) => {
         const className =
           clip.id === clipName && active ? "drum-pad playing" : "drum-pad";
         return (
@@ -138,10 +139,12 @@ function DrumPads({
             id={clip.id}
             key={clip.id}
             children={clip.label}
-            onClick={onClick}
+            handleClick={handleClick}
             theme={theme}
             power={power}
+            index={index}
             audioRef={audioRef}
+            
           />
         );
       })}

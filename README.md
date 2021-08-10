@@ -1,3 +1,4 @@
-# Simple drum machine created with react.js
+# Simple drum machine created with CRA
 
-## The project is part of the FCC certification.
+## This project is part of the FCC Front End Development certification.
+

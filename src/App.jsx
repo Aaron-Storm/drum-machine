@@ -50,7 +50,7 @@ function App() {
           }
         }
       } catch (error) {
-        console.log('test');
+        console.log('test', error);
       }
     }
   }

@@ -1,4 +1,3 @@
-import React, { useState, useEffect, useRef } from "react";
 import Display from "./Display";
 import DrumPads from "./DrumPads";
 import Header from "./Header";

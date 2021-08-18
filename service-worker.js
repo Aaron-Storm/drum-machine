@@ -1,5 +1,5 @@
 let CACHE_NAME = "drumMachine-cache-v1";
-const urlsToCache = ["./", "./index.html"];
+const urlsToCache = ["/", "/index.html"];
 /* eslint-disable-next-line no-restricted-globals */
 self.addEventListener("install", function (event) {
   // Perform install steps

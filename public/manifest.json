@@ -40,8 +40,7 @@
     
   ],
   "description": "This application serves as an example for future campers",
-  "start_url": "https://aaron-storm.github.io/drum-machine/",
-  "scope": "/",
+  "start_url": ".",
   "display": "standalone",
   "theme_color": "#ffc229",
   "background_color": "hsl(240, 18%, 14%)"

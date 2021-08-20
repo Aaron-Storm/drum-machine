@@ -43,7 +43,7 @@ function DrumPad({ className, theme, id, src, children, power, audioRef, index, 
         ref={el => audioRef.current[index] = el}
         className="clip"
         src={src}
-        type="audio/wav"
+        type="audio/mp3"
         id={children} 
         // crossOrigin="anonymous"
         preload="auto"

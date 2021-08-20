@@ -32,8 +32,13 @@ function DrumMachine({
 
   return (
     <div className={drumMachineClass} id="drum-machine">
-      <Header power={power} handleClick={toggleDarkScreen} />
-      <Display power={power} sound={displayName} volume={volume} />
+      <Header 
+        power={power} 
+        handleClick={toggleDarkScreen} />
+      <Display 
+        power={power} 
+        sound={displayName} 
+        volume={volume} />
       <Controls
         power={power}
         activeBank={bank}

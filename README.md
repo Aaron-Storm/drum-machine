@@ -12,7 +12,7 @@ I will keep adding links and information that have helped me not just building t
 
 I could have finished the project much faster in codepen but I felt I want to build the project in a real life setting and thus had to learn a whole lot of other stuff for almost a year. 
 
-I have made this app a PWA - Progressive Web App. I reckon if you are serious about becoming a developer you should definitely look into this technology.
+I have made this app a PWA - Progressive Web App. I reckon if you are serious about becoming a developer you should definitely look into it and apply it in of your projects.
 
 In the end the certification is only worth the effort you put into it.
 
@@ -23,6 +23,12 @@ It may appear simple but there are a whole lot of things you can try out and lea
 This is an ongoing project and I will keep updating it in the near future.
 
 For now it has merely passed the FCC project test suite.
+
+Feel free to browse through the project.
+
+In the future I will provide an example project for each of the five projects required for the front end development certification using slightly different approaches and additional utilities.
+
+to be continued...
 
 
 

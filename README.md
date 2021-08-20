@@ -10,9 +10,9 @@ As the aim of the project is to use a frontend-library I have not used any nativ
 
 I will keep adding links and information that have helped me not just building the project but also understanding how react works, how to setup my IDE via [WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10), how to deploy my apps and much more. 
 
-I could have finished the project much faster in codepen but I felt I want to build the project in a real life setting and thus had to learn a whole lot of other stuff for almost a year. 
+I probably could have finished the project much faster in codepen but I felt I want to build the project in a real life setting and thus had to learn a whole lot of other stuff. After roughly a year of delving into various libraries, reading through countless documentations and following dozens of tutorials I began to understand the bigger picture and felt I was ready to finish the certification.
 
-I have made this app a [PWA - Progressive Web App](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps). I reckon if you are serious about becoming a developer you should definitely look into it and apply it in one of your projects.
+I have made this app a [PWA - Progressive Web App](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps). I reckon if you are serious about becoming a developer you should definitely check it out and while at it a apply it in one of your projects. 
 
 In the end the certification is only worth the effort you put into it.
 

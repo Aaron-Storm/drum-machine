@@ -2,13 +2,13 @@
 
 ## This project is part of the FCC Front End Development certification.
 
-My goal is to provide an example project for FCC students who might feel they would prefer to build the project using an actual IDE like vscode and rather deploy the web application themselves instead of coding within the Codepen editor.
+My goal is to provide an example project for FCC students who might feel they would prefer to build the project using an actual IDE like [vscode](https://code.visualstudio.com/https://code.visualstudio.com/) and rather deploy the web application themselves instead of coding within the Codepen editor.
 
 I also think the official example is slightly outdated as it still mainly uses class components and also uses document event listeners as opposed to react synthetic events.
 
 As the aim of the project is to use a frontend-library I have not used any native eventListeners as per [react](https://reactjs.org/docs/handling-events.html) documentation recommended.
 
-I will keep adding links and information that have helped me not just building the project but also understanding how react works, how to setup and IDE via WSL 2, how to deploy my apps and much more. 
+I will keep adding links and information that have helped me not just building the project but also understanding how react works, how to setup my IDE via [WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10), how to deploy my apps and much more. 
 
 I could have finished the project much faster in codepen but I felt I want to build the project in a real life setting and thus had to learn a whole lot of other stuff for almost a year. 
 
@@ -22,7 +22,7 @@ It may appear simple but there are a whole lot of things you can try out and lea
 
 This is an ongoing project and I will keep updating it in the near future.
 
-For now it has merely passed the FCC project test suite.
+For now it has merely passed the FCC project test suite. I have left out a state managment tool like [react-redux](https://react-redux.js.org/) or [mobx](https://mobx.js.org/README.html) but will add it later. 
 
 Feel free to browse through the project.
 

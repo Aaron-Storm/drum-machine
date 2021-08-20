@@ -1,4 +1,4 @@
-import realKick from "../assets/audio/bankA/real-life-KICK.wav";
+import realKick from "../assets/audio/bankA/real-life-KICK.mp3";
 import realSN1 from "../assets/audio/bankA/real-life-SN1.mp3";
 import realTom1F from "../assets/audio/bankA/real-life-TOM1F.mp3";
 import realTOM1L from "../assets/audio/bankA/real-life-TOM1L.WAV";

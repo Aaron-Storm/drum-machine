@@ -1,6 +1,6 @@
 # Simple drum machine created with [CRA](https://create-react-app.dev/)
 
-## This project is part of the FCC Front End Development certification.
+## This project is part of the [freeCodeCamp](https://www.freecodecamp.org/) Front End Development Libraries certification.
 
 My goal is to provide an example project for FCC students who might feel they would prefer to build the project using an actual IDE like [vscode](https://code.visualstudio.com/https://code.visualstudio.com/) and rather deploy the web application themselves instead of coding within the Codepen editor.
 

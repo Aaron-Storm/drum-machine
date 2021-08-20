@@ -43,5 +43,5 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#ffc229",
-  "background_color": "hsl(240, 18%, 14%)"
+  "background_color": "#ffffff"
 }
